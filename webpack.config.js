@@ -1,13 +1,15 @@
 const path = require("path");
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+const webpack = require("webpack");
+const NodemonPlugin = require("nodemon-webpack-plugin");
+const HtmlWebpackPlugin = require("html-webpack-plugin");
 
 module.exports = {
-  mode: "production",
+  mode: "development",
   entry: "./src/views/Browser.js",
   output: {
     path: path.resolve(__dirname, "dist"),
-    publicPath: '/dist',
-    filename: "app.bundle.js"
+    publicPath: "/dist",
+    filename: "app.[hash].js"
   },
   module: {
     rules: [
@@ -21,6 +23,17 @@ module.exports = {
     ]
   },
   plugins: [
-    new HtmlWebpackPlugin({template: './src/views/index.html'})
-  ]
+    new NodemonPlugin({
+      watch: path.resolve("./"),
+      ignore: ["node_modules/*", "dist/*"],
+      script: "./index.js",
+      ext: "js,html"
+    }),
+    new webpack.HotModuleReplacementPlugin(),
+    new HtmlWebpackPlugin({ template: "./src/views/index.html" })
+  ],
+  watch: true,
+  watchOptions: {
+    ignored: /node_modules/
+  }
 };
