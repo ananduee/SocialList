@@ -1,0 +1,10 @@
+{
+  "name": "SocialList",
+  "version": "1.0.0",
+  "description": "Simple social list sharing",
+  "main": "index.js",
+  "repository": "git@github.com:ananduee/SocialList.git",
+  "author": "Anand Mohan Sinha <anasinha@amazon.com>",
+  "license": "MIT",
+  "private": true
+}
