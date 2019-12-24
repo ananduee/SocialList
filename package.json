@@ -6,5 +6,11 @@
   "repository": "git@github.com:ananduee/SocialList.git",
   "author": "Anand Mohan Sinha <anasinha@amazon.com>",
   "license": "MIT",
-  "private": true
+  "private": true,
+  "scripts": {
+    "start": "node index.js"
+  },
+  "dependencies": {
+    "express": "^4.17.1"
+  }
 }
