@@ -1,11 +1,8 @@
 import React from "react";
-import Button from 'react-bootstrap/Button';
+import TopBar from "./components/TopBar"
 
 export default function App(props) {
   return (
-    <div>
-      <p>Hello world this is some change and more change check now.</p>
-      <Button>This is button more.</Button>
-    </div>
+    <TopBar />
   );
 }
