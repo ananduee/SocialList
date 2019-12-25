@@ -2,8 +2,12 @@ require("@babel/register"); // For transforming javascript on the fly
 const fs = require("fs");
 const express = require("express");
 const ViewStream = require("./src/views/ViewStream");
+const log = require("./src/core/log");
 
 const app = express();
+log.initializeLogger();
+app.use(log.expressMiddleware());
+
 const port = 3000;
 
 const baseViewText = fs.readFileSync("dist/index.html").toString();
