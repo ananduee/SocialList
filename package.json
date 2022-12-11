@@ -19,7 +19,7 @@
     "bootstrap": "^4.4.1",
     "cheerio": "^1.0.0-rc.3",
     "cls-hooked": "^4.2.2",
-    "express": "^4.17.1",
+    "express": "^4.17.3",
     "on-finished": "^2.3.0",
     "pino": "^5.15.0",
     "react": "^16.12.0",
